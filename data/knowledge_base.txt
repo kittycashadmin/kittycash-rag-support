@@ -1,0 +1,929 @@
+### DOC_ID: 1
+QUESTION: How can I sign up for a new account?
+ANSWER: To create your KittyCash account, go to the Sign-Up page on our website or app, enter your email, choose a password, and follow the verification steps. You’ll be set up in minutes
+---
+
+### DOC_ID: 2
+QUESTION: What if I forget my password?
+ANSWER: Use the account recovery options provided in the app or contact support for assistance.
+---
+
+### DOC_ID: 3
+QUESTION: How can I view or update my profile?
+ANSWER: You can view your profile details by selecting the profile settings top left on the screen.
+---
+
+### DOC_ID: 4
+QUESTION: Can I upload or change my profile photo?
+ANSWER: Yes, you can upload or change profile photos.
+---
+
+### DOC_ID: 5
+QUESTION: Will I be charged any tax or fee during payouts?
+ANSWER: Stripe charges 2% (INR) / 2.9% + $0.30 (USD). A small payout fee and 0.01% app service fee also apply
+---
+
+### DOC_ID: 6
+QUESTION: How do I invite someone to KittyCash?
+ANSWER: Go to the Groups tab, open your group, and tap Invite Members. You can share the invite link or group code with your friends. Once they complete verification and accept the invite, they’ll become part of the group
+---
+
+### DOC_ID: 7
+QUESTION: Can I have multiple accounts with the same email?
+ANSWER: No. Each email address can only be linked to one account for security reasons.
+---
+
+### DOC_ID: 8
+QUESTION: How can I check my account status and credit balance?
+ANSWER: Your profile displays your current status and any available credit balance.
+---
+
+### DOC_ID: 9
+QUESTION: How can I create a group?
+ANSWER: You can create a new group by specifying group name, terms, payment target, and frequency. Joining is done by group invitation or request.
+---
+
+### DOC_ID: 10
+QUESTION: What is a group term and how does payment work?
+ANSWER: Group terms are payment periods or cycles. You pay into your group’s terms based on the set target amount and schedule.
+---
+
+### DOC_ID: 11
+QUESTION: How can I see my group info and payment logs?
+ANSWER: Your group details, terms, and history of payments made can be viewed through your profile or group dashboard.
+---
+
+### DOC_ID: 12
+QUESTION: What should I do if I want to update payment status or see payment history?
+ANSWER: Check or update payments in Group → Payments section
+---
+
+### DOC_ID: 13
+QUESTION: How is the winner payout handled in terms?
+ANSWER: The term winner receives the pooled funds through the group’s selected transfer mode
+---
+
+### DOC_ID: 14
+QUESTION: What payment methods can I use?
+ANSWER: You can pay using your Debit Card or Credit Card
+---
+
+### DOC_ID: 15
+QUESTION: How do I check my subscription expiry date?
+ANSWER: Under subscription you can see your Expire Date
+---
+
+### DOC_ID: 16
+QUESTION: How do I update my profile information?
+ANSWER: You can update your details like name, contact number, address, date of birth, and profile photo within the app's profile settings.
+---
+
+### DOC_ID: 17
+QUESTION: How can I change my password?
+ANSWER: Once logged in, go to the password settings to update your password. If you received a temporary password, you will be prompted to change it immediately after login.
+---
+
+### DOC_ID: 18
+QUESTION: What should I do if I want to delete my account?
+ANSWER: You can unregister your account through the account settings. This will remove your profile and all associated data securely from the system.
+---
+
+### DOC_ID: 19
+QUESTION: How do I recover my account if I lose access?
+ANSWER: Use the password recovery option to receive a temporary password by registered email, then log in and reset your password.
+---
+
+### DOC_ID: 20
+QUESTION: How do I join or leave a group?
+ANSWER: You can join groups you are invited to or request to join. Leaving a group is as simple as selecting the leave option in the group settings.
+---
+
+### DOC_ID: 21
+QUESTION: Can I send messages in groups or directly to other users?
+ANSWER: Yes, you can send messages in any group you belong to, or create direct message groups to chat privately with one or more members.
+---
+
+### DOC_ID: 22
+QUESTION: How will I know if someone is typing in a group chat?
+ANSWER: The app shows typing indicators when other members are typing in the chat.
+---
+
+### DOC_ID: 23
+QUESTION: How can I subscribe to a monthly or yearly plan?
+ANSWER: The app offers monthly and yearly subscription plans. You can subscribe via the payment section in your profile.
+---
+
+### DOC_ID: 24
+QUESTION: How do I update my payment details?
+ANSWER: Update your payment information securely in the payment settings page of your profile.
+---
+
+### DOC_ID: 25
+QUESTION: How do I cancel or renew my subscription?
+ANSWER: Subscriptions can be cancelled or renewed from your profile's subscription management section.
+---
+
+### DOC_ID: 26
+QUESTION: What happens if a payment fails?
+ANSWER: You'll receive a notification if a payment fails. Please update your payment details or retry the payment to continue enjoying subscription benefits.
+---
+
+### DOC_ID: 27
+QUESTION: Who can see my profile and messages?
+ANSWER: Your profile and messages are visible only to authorized users and group members as per your privacy settings.
+---
+
+### DOC_ID: 28
+QUESTION: What should I do if I suspect unauthorized access to my account?
+ANSWER: Immediately change your password, enable two-phase authentication, and contact support for assistance.
+---
+
+### DOC_ID: 29
+QUESTION: What is Kittycash?
+ANSWER: Kittycash is a secure group savings and payment management platform that allows users to create or join groups, manage payments, track subscriptions, and communicate in real time.
+---
+
+### DOC_ID: 30
+QUESTION: What subscription plans are available?
+ANSWER: Kittycash offers: Monthly plan – $7.99/month; Yearly plan – $79.99/year.
+---
+
+### DOC_ID: 31
+QUESTION: What happens if my subscription payment fails?
+ANSWER: You’ll get a notification and a grace period (7 days) to correct the payment method before your subscription is paused.
+---
+
+### DOC_ID: 32
+QUESTION: What is the maximum number of members in a group?
+ANSWER: A group can have up to 12 participants.
+---
+
+### DOC_ID: 33
+QUESTION: How many groups can I join?
+ANSWER: You can be active in 10 groups and have up to 10 passive groups at the same time.
+---
+
+### DOC_ID: 34
+QUESTION: How does group admission work?
+ANSWER: Groups can require approval either from the admin only or from all group members.
+---
+
+### DOC_ID: 35
+QUESTION: What roles exist in a group?
+ANSWER: Members can be Regular users, Admins, Cashiers, or Admin-Cashiers.
+---
+
+### DOC_ID: 36
+QUESTION: What payment types are supported in groups?
+ANSWER: We accept credit/debit cards (Visa, MasterCard, Amex) and bank transfers. You can manage payment methods in Settings > Payment
+---
+
+### DOC_ID: 37
+QUESTION: How does the group payout work?
+ANSWER: Payouts can be chosen randomly by the system or through a voting process.
+---
+
+### DOC_ID: 38
+QUESTION: What is the group term period?
+ANSWER: Groups can have weekly, bi-weekly, monthly, quarterly, half-yearly, or yearly fund cycles.
+---
+
+### DOC_ID: 39
+QUESTION: What is the range of the credit score?
+ANSWER: Your credit score ranges from 0 to 1000.
+---
+
+### DOC_ID: 40
+QUESTION: What is the term payment window?
+ANSWER: This is the allowed period after the start of a term when payments can be made.
+---
+
+### DOC_ID: 41
+QUESTION: What happens if I miss the payment window?
+ANSWER: If the payment window is closed, you might not be able to make a payment for that term.
+---
+
+### DOC_ID: 42
+QUESTION: What is a credit score in Kittycash?
+ANSWER: Your credit score is a number that shows how reliable you are in making payments.
+---
+
+### DOC_ID: 43
+QUESTION: What factors affect my credit score?
+ANSWER: Your credit score is based on how long you have been using Kittycash, successful payments, late payments, defaults, and lending portfolio.
+---
+
+### DOC_ID: 44
+QUESTION: How is the credit score calculated?
+ANSWER: The app adds points for successful payments and long account life, and subtracts for late payments.
+---
+
+### DOC_ID: 45
+QUESTION: Why is my credit score important?
+ANSWER: A higher credit score can help you build trust with group members.
+---
+
+### DOC_ID: 46
+QUESTION: How do I create a new group?
+ANSWER: Go to the 'Create Group' option, enter details, and confirm.
+---
+
+### DOC_ID: 47
+QUESTION: How many people can I add to my group?
+ANSWER: You can have up to the maximum allowed members as shown in the app.
+---
+
+### DOC_ID: 48
+QUESTION: Can I leave a group before the group transaction starts?
+ANSWER: Yes ,you can leave the group before transactions,once the transaction start from any group member you cannot leave the group
+---
+
+### DOC_ID: 49
+QUESTION: How can I update group details?
+ANSWER: If you’re an admin, you can edit name, photo, target amount, and settings.
+---
+
+### DOC_ID: 50
+QUESTION: Can I change the group photo?
+ANSWER: Yes. Go to 'Update Group Photo' and upload a new picture.
+---
+
+### DOC_ID: 51
+QUESTION: How do I remove a member from a group?
+ANSWER: Only admins can remove members.
+---
+
+### DOC_ID: 52
+QUESTION: What do group roles mean?
+ANSWER: Admin – manages the group; Cashier – handles payments; Admin-Cashier – does both; Regular – normal member.
+---
+
+### DOC_ID: 53
+QUESTION: How do I place a bid?
+ANSWER: When bidding is open, enter your bid amount within the allowed range.
+---
+
+### DOC_ID: 54
+QUESTION: How is the winner chosen?
+ANSWER: The highest valid bidder wins, or if no bids, random selection is made.
+---
+
+### DOC_ID: 55
+QUESTION: When will the winner get their payout?
+ANSWER: After term payments are collected, payout is credited via chosen method.
+---
+
+### DOC_ID: 56
+QUESTION: My photo didn’t upload. Why?
+ANSWER: Ensure your image is in JPG/PNG format, not too large, and has an internet connection.
+---
+
+### DOC_ID: 57
+QUESTION: Will I know the activity of the Group?
+ANSWER: Group members can view shared transactions and reports. Admins can also manage members, edit group settings, and approve join requests. Check your group’s settings for specific permissions.
+---
+
+### DOC_ID: 58
+QUESTION: How do I delete my profile photo?
+ANSWER: Update with a new one or remove to default.
+---
+
+### DOC_ID: 59
+QUESTION: Can I change the email where I get Kittycash alerts?
+ANSWER: Yes. Update email in Profile Settings.
+---
+
+### DOC_ID: 60
+QUESTION: Can I share my profile or group photo link?
+ANSWER: Yes. Open photo, copy URL.
+---
+
+### DOC_ID: 61
+QUESTION: How do I change my profile photo?
+ANSWER: Go to Profile Settings → Change Photo, and upload.
+---
+
+### DOC_ID: 62
+QUESTION: How do I change my group’s photo?
+ANSWER: If admin, go to Group Settings → Change Group Photo.
+---
+
+### DOC_ID: 63
+QUESTION: How do I add a payment card to my profile?
+ANSWER: Go to Payment Methods, tap 'Add Card', and enter details.
+---
+
+### DOC_ID: 64
+QUESTION: How do I remove a saved payment method?
+ANSWER: In Payment Methods, select and delete the card.
+---
+
+### DOC_ID: 65
+QUESTION: How can I update my saved card details?
+ANSWER: Choose the card, update details, and save.
+---
+
+### DOC_ID: 66
+QUESTION: How do I enable or disable a payment method?
+ANSWER: In Payment Methods list, choose Enable/Disable.
+---
+
+### DOC_ID: 67
+QUESTION: How do I add someone to my contacts?
+ANSWER: Tap 'Add Contact', enter details.
+---
+
+### DOC_ID: 68
+QUESTION: What if I enter a contact who isn’t on Kittycash yet?
+ANSWER: They’ll get an invite to join.
+---
+
+### DOC_ID: 69
+QUESTION: How do I delete or update a contact?
+ANSWER: Select contact, then edit or delete.
+---
+
+### DOC_ID: 70
+QUESTION: How do I start a direct chat with a contact?
+ANSWER: When a contact is added, a direct message group can be created.
+---
+
+### DOC_ID: 71
+QUESTION: How do I set up payouts to my  bank account?
+ANSWER: Go to Payouts, bank details.
+---
+
+### DOC_ID: 72
+QUESTION: Will I get notification if my payments fail?
+ANSWER: No.
+---
+
+### DOC_ID: 73
+QUESTION: How do I get my group won payout?
+ANSWER: If you win, prize is sent to preferred method after processing.
+---
+
+### DOC_ID: 74
+QUESTION: How do I update my bank details or address for payouts?
+ANSWER: Go to Profile > Bank Details and update.
+---
+
+### DOC_ID: 75
+QUESTION: How do I mark a group as my favorite?
+ANSWER: In group list, tap 'star' icon.
+---
+
+### DOC_ID: 76
+QUESTION: Why did my payment fail?
+ANSWER: Check card details, expiry, and balance.
+---
+
+### DOC_ID: 77
+QUESTION: What type of cards can I use?
+ANSWER: Kittycash accepts most major credit and debit cards.
+---
+
+### DOC_ID: 78
+QUESTION: How will I be billed?
+ANSWER: Billed automatically according to plan.
+---
+
+### DOC_ID: 79
+QUESTION: Why do I need to upload my ID for payouts?
+ANSWER: For security and compliance.
+---
+
+### DOC_ID: 80
+QUESTION: How do I know if my verification is complete?
+ANSWER: Check verification status in profile.
+---
+
+### DOC_ID: 81
+QUESTION: What is a group in KittyCash?
+ANSWER: A group is a set of members who participate in a shared ROSCA
+---
+
+### DOC_ID: 82
+QUESTION: What does 'agreeGroupTerms' mean?
+ANSWER: It means you agree to the group’s terms.
+---
+
+### DOC_ID: 83
+QUESTION: How do I choose the Number of Terms for my group? What does this mean?
+ANSWER: The number of terms is the total periods your group will run. For example, if you select "12" and set the term frequency to "Monthly," your group will operate for 12 months.
+---
+
+### DOC_ID: 84
+QUESTION: How do group bids work?
+ANSWER: Members place bids to get payout early.
+---
+
+### DOC_ID: 85
+QUESTION: What is a group bonus?
+ANSWER: Extra money distributed from winning bidder’s reduction.
+---
+
+### DOC_ID: 86
+QUESTION: How is the payout decided?
+ANSWER: By the group’s bidding process.
+---
+
+### DOC_ID: 87
+QUESTION: What is a group cashier?
+ANSWER: A member responsible for collecting contributions.
+---
+
+### DOC_ID: 88
+QUESTION: What is group voting?
+ANSWER: Voting is used to elect cashier or resolve disputes.
+---
+
+### DOC_ID: 89
+QUESTION: How do I see the groups I’m in?
+ANSWER: Go to 'My Groups'.
+---
+
+### DOC_ID: 90
+QUESTION: What is the invite list?
+ANSWER: A record of all invitations.
+---
+
+### DOC_ID: 91
+QUESTION: How can I pay my term contribution?
+ANSWER: Go to group page and select 'Pay Now'.
+---
+
+### DOC_ID: 92
+QUESTION: How can I check if my payment went through?
+ANSWER: View payment history in 'My Payments'.
+---
+
+### DOC_ID: 93
+QUESTION: What happens if I miss a payment?
+ANSWER: Missing a payment can result in penalties.
+---
+
+### DOC_ID: 94
+QUESTION: How are bonuses calculated?
+ANSWER: From winning bidders’ reduced payouts.
+---
+
+### DOC_ID: 95
+QUESTION: When will my bonus be paid?
+ANSWER: After the term’s payout is completed.
+---
+
+### DOC_ID: 96
+QUESTION: How do I check my payout status?
+ANSWER: Go to 'Payouts' section in your group.
+---
+
+### DOC_ID: 97
+QUESTION: How can I contact KittyCash support?
+ANSWER: Contact via Settings > Help, email, or phone.
+---
+
+### DOC_ID: 98
+QUESTION: What’s the difference between user and group subscriptions?
+ANSWER: User subscription is for individuals; group allows shared access.
+---
+
+### DOC_ID: 99
+QUESTION: Will I receive the notifications before payment?
+ANSWER: No
+---
+
+### DOC_ID: 100
+QUESTION: I can’t join a group. What should I do?
+ANSWER: If the group is already full or the admin has not yet approved your request, please be patient. If it takes longer than expected, you can reach out to support for assistance.
+---
+
+### DOC_ID: 101
+QUESTION: Why can’t I bid in my group?
+ANSWER: If you have already won one time you are not allowed to bid until the session ends.
+---
+
+### DOC_ID: 102
+QUESTION: How does group voting work?
+ANSWER: The admin will poll the voting the highest number of votes will be the winner.
+---
+
+### DOC_ID: 103
+QUESTION: What happens if no one bids in a round?
+ANSWER: Any random person will be selected and declared as winner.
+---
+
+### DOC_ID: 104
+QUESTION: Benefits of participating in this app?
+ANSWER: Save regularly, access payouts, and manage group funds securely.
+---
+
+### DOC_ID: 105
+QUESTION: How to be sure the investment is safe?
+ANSWER: All payments are processed securely via Stripe, and only verified members can join groups.
+---
+
+### DOC_ID: 106
+QUESTION: What happens if one group member does not do payments correctly?
+ANSWER: The admin should take the action or should request help from support to clear the issue.
+---
+
+### DOC_ID: 107
+QUESTION: Can I leave the group in middle once the group transactions starts?
+ANSWER: No you cannot leave once the transactions start.
+---
+
+### DOC_ID: 108
+QUESTION: What happens if the group admin stops managing the group?
+ANSWER: Inform to the Kittycash support.
+---
+
+### DOC_ID: 109
+QUESTION: Can I pay advanced payments for two/three months?
+ANSWER: No advaned payments will be accepted
+---
+
+### DOC_ID: 110
+QUESTION: Age or income requirements to join?
+ANSWER: The age limit is around 17 in USA , 18 in India
+---
+
+### DOC_ID: 111
+QUESTION: Can a admin transfer his role to others?
+ANSWER: In certain circumstances, with the consent of all group members, the current admin should appoint a new admin and then exit the group.
+---
+
+### DOC_ID: 112
+QUESTION: Can I remove a member from the group?
+ANSWER: If a member does not follow the terms and conditions, they should be removed from the group and replaced with a new member.
+---
+
+### DOC_ID: 113
+QUESTION: Why do I need to provide a contact number?
+ANSWER: Your phone number is used for verification and communication regarding your subscriptions and savings groups.
+---
+
+### DOC_ID: 114
+QUESTION: What should I do if my ID verification fails?
+ANSWER: You can edit the information if nt contact the kittycash customer support
+---
+
+### DOC_ID: 115
+QUESTION: How do I enable my subscription?
+ANSWER: Go to Subscription in your account settings, toggle the Subscription Status to Enabled then complete with the account details and complete payments
+---
+
+### DOC_ID: 116
+QUESTION: How can I check my subscription details?
+ANSWER: You can view your Subscription ID, type, renewal date, expiry date, and payment status under the Subscription section.
+---
+
+### DOC_ID: 117
+QUESTION: What happens if my subscription expires?
+ANSWER: If your subscription expires, your access to premium features will stop immediately. You can still use the free/basic version of the app, but to continue enjoying all features, you’ll need to renew your subscription.
+---
+
+### DOC_ID: 118
+QUESTION: Can I switch from monthly to yearly subscription?
+ANSWER: Yes you can
+---
+
+### DOC_ID: 119
+QUESTION: How do I view my subscription history?
+ANSWER: Scroll to Subscription History in the Subscription page to see past payments and plan details.
+---
+
+### DOC_ID: 120
+QUESTION: Will I get a refund if I cancel my subscription?
+ANSWER: No, cancellations do not trigger automatic refunds. You will continue to have access to the service until the end of your current billing cycle. If you believe you’re eligible for a refund due to special circumstances, please contact our support team
+---
+
+### DOC_ID: 121
+QUESTION: How do I verify my identity in KittyCash?
+ANSWER: After subscription activation you will be redirected to the profile settings page there you can do identiti verification
+---
+
+### DOC_ID: 122
+QUESTION: How can i do the Identity verification?
+ANSWER: click on to the identity verification will be directed to the page where should fill ill in your address, country, state, pincode, ID number, last 4 digits of your SSN, and date of birth, then click "Verify Identity".
+---
+
+### DOC_ID: 123
+QUESTION: Why is my identity verification status showing as 'Passive' or 'Pending'?
+ANSWER: This means your submitted documents or details are still under review. Verification may take a few hours. Please be patient.
+---
+
+### DOC_ID: 124
+QUESTION: What is the difference between Identity Verification and ID Verification?
+ANSWER: Identity Verification confirms your personal information and address, while ID Verification checks your government issued ID documents for authenticity.
+---
+
+### DOC_ID: 125
+QUESTION: How do I complete payout settings?
+ANSWER: To complete your payout settings, go to your Profile → Payout Settings and add your bank account details (account number, bank name, branch, IFSC code, and address). Make sure your details match the name on your Stripe-verified account. Once saved, your payouts will be automatically transferred to this account
+---
+
+### DOC_ID: 126
+QUESTION: What happens if my payout account is pending?
+ANSWER: You won’t be able to withdraw funds until your account is fully verified and approved.
+---
+
+### DOC_ID: 127
+QUESTION: How long does verification take?
+ANSWER: Verification usually takes just a few minutes, but in some cases, Stripe may take up to 24–48 hours to review your documents and confirm your account details.
+---
+
+### DOC_ID: 128
+QUESTION: where can i find Unique User Id
+ANSWER: Open navigation menu on top left go to settings you can find your uuid
+---
+
+### DOC_ID: 129
+QUESTION: How do I create groups?
+ANSWER: Go to the Groups section, tap the + icon, and enter your group details like name, number of terms, fund target, and billing frequency.
+---
+
+### DOC_ID: 130
+QUESTION: What  is fund target?
+ANSWER: This is the amount each member will contribute per term.
+---
+
+### DOC_ID: 131
+QUESTION: How do I choose the frequency of contributions?
+ANSWER: You can select Daily, Weekly, Biweekly, or Monthly in the “Term Frequency” dropdown.
+---
+
+### DOC_ID: 132
+QUESTION: What is the Billing Day option for?
+ANSWER: This is the date on which contributions will be collected from all members.
+---
+
+### DOC_ID: 133
+QUESTION: Can I add members after creating the group?
+ANSWER: Yes, you can invite members anytime by opening the group and selecting the Add Member option.
+---
+
+### DOC_ID: 134
+QUESTION: Can I change group details after creation?
+ANSWER: Some settings like group name and profile picture can be changed, but financial terms (fund target, frequency) usually can’t be changed after the first contribution.
+---
+
+### DOC_ID: 135
+QUESTION: How do I make my contribution?
+ANSWER: You will get a payment request on the scheduled billing day. You can pay directly from the group page.
+---
+
+### DOC_ID: 136
+QUESTION: Can I be in multiple groups at the same time?
+ANSWER: Yes, you can join or create multiple groups atmost 10.
+---
+
+### DOC_ID: 137
+QUESTION: What is the Billing Day?
+ANSWER: The day of the month/week when contributions are collected from members.
+---
+
+### DOC_ID: 138
+QUESTION: What is Payout Bidding?
+ANSWER: It’s a process where members place bids to win the group payout for a particular term.
+---
+
+### DOC_ID: 139
+QUESTION: How do I place a bid?
+ANSWER: When bidding is active, you will receive a group message. In the top-right corner, beside the settings icon, you will see the bidding icon. Click the icon and enter your bid amount.
+---
+
+### DOC_ID: 140
+QUESTION: When can I bid?
+ANSWER: You can bid only when the bidding status shows in progress. You will get a message in group chat like group payment bidding started.
+---
+
+### DOC_ID: 141
+QUESTION: How do I know if I won the bid?
+ANSWER: Will display the WINNER status along with your name in the group chat.
+---
+
+### DOC_ID: 142
+QUESTION: who can control bidding
+ANSWER: Only group admin can do.
+---
+
+### DOC_ID: 143
+QUESTION: Can I check the term info
+ANSWER: Yes Group settings> session settings > terms info
+---
+
+### DOC_ID: 144
+QUESTION: what are the bidding status mean?
+ANSWER: WINNER – The payout for the term has been decided,IN PROGRESS – Bidding is currently open,STOPPED – Bidding is paused by the admin.,RESUMED – Bidding has been restarted,FINISHED – The bidding process for the term has ended.
+---
+
+### DOC_ID: 145
+QUESTION: How to know the highes bid while bidding?
+ANSWER: While bidding, you can see in the latest bid
+---
+
+### DOC_ID: 146
+QUESTION: What does Term Frequency mean?
+ANSWER: Term Frequency determines how often your group contributes funds—every week, every two weeks, or every month
+---
+
+### DOC_ID: 147
+QUESTION: How do I select the right Billing Day?
+ANSWER: When creating a group, choose a billing day that works best for all members. This is the day on which contributions will be collected every term (e.g., monthly on the 5th). It’s recommended to pick a date when most members are likely to have funds available, such as just after salary credit
+---
+
+### DOC_ID: 148
+QUESTION: How often will I need to contribute funds?
+ANSWER: This depends on the Term Frequency (weekly, biweekly, or monthly).
+---
+
+### DOC_ID: 149
+QUESTION: If I pick “Monthly,” will the group be billed on the same day each month?
+ANSWER: Yes. If you select ‘Monthly’ as the billing frequency, contributions will be collected on the same billing day each month.
+---
+
+### DOC_ID: 150
+QUESTION: Can I change the billing frequency or day after creating the group?
+ANSWER: Only before the transactions start you can change the settings
+---
+
+### DOC_ID: 151
+QUESTION: What does Cashier Selection mean?
+ANSWER: Cashier Selection is the process of choosing a group member who will handle the payout for a particular term. The cashier is responsible for receiving the collected contributions once the bidding or payout decision is complete
+---
+
+### DOC_ID: 152
+QUESTION: What are the available choices for Cashier Selection?
+ANSWER: ADMIN: The group administrator is always the cashier,ADMIN_SELECT: The admin selects a cashier from group members for each term,VOTING: Group members vote to choose the cashier for each term.
+---
+
+### DOC_ID: 153
+QUESTION: Can we change the cashier after group creation?
+ANSWER: Yes, the admin can reassign the cashier if needed with group approval
+---
+
+### DOC_ID: 154
+QUESTION: What is the Payout Process, and why does it matter?
+ANSWER: The payout process defines how the group decides who receives the funds for a term.
+---
+
+### DOC_ID: 155
+QUESTION: What are the available payout process types?
+ANSWER: RANDOMIZE: The recipient for each term is chosen randomly among members, BIDDING: Members can bid for the payout, and the highest bidder receives the fund.
+---
+
+### DOC_ID: 156
+QUESTION: What does 'Allow Multiple Pays/Term' mean?
+ANSWER: This setting determines if a member can split their required payment for a term into multiple smaller payments.
+---
+
+### DOC_ID: 157
+QUESTION: What does 'Auto-Pay Required' mean?
+ANSWER: If this setting is enabled, members must set up automatic recurring payments for their contributions.
+---
+
+### DOC_ID: 158
+QUESTION: What if I select ‘No’ for Auto-Pay Required?
+ANSWER: Members can pay manually each term auto-pay is optional.
+---
+
+### DOC_ID: 159
+QUESTION: Can I change the Auto-Pay requirement after setup?
+ANSWER: Yes, you can join if the admin approves, but please make sure that all payments are completed correctly
+---
+
+### DOC_ID: 160
+QUESTION: Why am I getting the error message: “Enter term target that is multiple of number of terms”?
+ANSWER: This means the Fund Target amount you entered must be exactly divisible by the Number of Terms you set for your group. For example, if you have 12 terms, your fund target should be a number like 600, 1,200, or 2,400 (12 × 50, 12 × 100, etc.). Adjust your fund target so it’s a multiple of the number of terms to proceed.
+---
+
+### DOC_ID: 161
+QUESTION: How do I add members to my group during group creation?
+ANSWER: In the “Members” step, you can search for contacts by name using the search bar at the top. Once your contacts appear, simply check the box beside each person you want to add to the group. After selecting all desired members, proceed to the next step to confirm your selections.
+---
+
+### DOC_ID: 162
+QUESTION: What if I want to add a person who is not in contacts while creating a group?
+ANSWER: you can send them an invitation to join. Use the “Invite” option . Once they receive the invite and complete the verification process, their information will automatically show up in your member selection list, and you can then add them to your group.
+---
+
+### DOC_ID: 163
+QUESTION: Can I still add or invite more members at this confirmation stage?
+ANSWER: At this stage, you can only review the members that have already been selected. If you need to add or invite more people, you will likely need to go back to the “Members” step before confirming. Look for a “Back”, return to the members list, and use the search or invite option from there.
+---
+
+### DOC_ID: 164
+QUESTION: Can I add people after creation of group?
+ANSWER: Yes, Before transactions start you can add.
+---
+
+### DOC_ID: 165
+QUESTION: Where can I see all group members?
+ANSWER: Tap the “Participants” section to view and manage the full list of group members.
+---
+
+### DOC_ID: 166
+QUESTION: How do I manage group term seasons?
+ANSWER: Use the “Seasons” option to check or adjust details about group terms or cycles.
+---
+
+### DOC_ID: 167
+QUESTION: What does Season Status mean?
+ANSWER: “Season Status” shows if the current term (season) is active or passive, and displays its progress.
+---
+
+### DOC_ID: 168
+QUESTION: How can I see details about the group’s rules or purpose?
+ANSWER: Open the group and go to the Group Info section. There you’ll find details such as the group’s rules, purpose, terms, billing day, and other important settings defined by the admin
+---
+
+### DOC_ID: 169
+QUESTION: What happens if I choose 'Leave Group'?
+ANSWER: If allowed, you can leave the group, typically after a term/season ends. Check if the “Leave Group” option is available for you.
+---
+
+### DOC_ID: 170
+QUESTION: How can I deactivate the group?
+ANSWER: Only the group admin can deactivate the group, using the “Deactivate Group” option in the Account section.
+---
+
+### DOC_ID: 171
+QUESTION: Where can I update the group profile photo or name?
+ANSWER: Updates to group profile information, such as photo or name, and changes appear in the group chat as notifications.
+---
+
+### DOC_ID: 172
+QUESTION: How do I view information about all the terms in a season?
+ANSWER: seasons>select the season you wanted to see > terms info.
+---
+
+### DOC_ID: 173
+QUESTION: How do I see historical winners or payouts from previous terms?
+ANSWER: Access “Terms Info”  under each term you can see who was the winner.
+---
+
+### DOC_ID: 174
+QUESTION: How do I know which term is currently running?
+ANSWER: The “Current Term Status” will display “Active” and the term number ( Active-1/2/3...), clearly showing which term is ongoing.
+---
+
+### DOC_ID: 175
+QUESTION: Can I use any card saved in my wallet for auto pay?
+ANSWER: Yes, you can choose any eligible card from your wallet by selecting it on the “Wallet” screen. Accepted types include VISA, Mastercard, AMEX.
+---
+
+### DOC_ID: 176
+QUESTION: How do I filter and select a specific type of card (like VISA or Discover) for auto pay?
+ANSWER: Use the filter buttons at the top of the Wallet screen (e.g., ALL, VISA, MASTERCARD, AMEX, DISCOVER) to view only that card type, then tap your preferred card.
+---
+
+### DOC_ID: 177
+QUESTION: How do I know which card is currently active for auto pay?
+ANSWER: The card set for auto pay is labeled with “AUTO PAY” in your wallet or highlighted in the auto pay section.
+---
+
+### DOC_ID: 178
+QUESTION: Can I view a history of my auto pay transactions?
+ANSWER: Yes, the “Transaction History” section lists all completed auto pay transactions, including group name, amount, date, and transaction ID.
+---
+
+### DOC_ID: 179
+QUESTION: How do I update the card details for auto pay?
+ANSWER: Go to the Wallet screen, select a different card, or add a new one, then make it your active auto pay card.
+---
+
+### DOC_ID: 180
+QUESTION: What does the eye icon next to card information do?
+ANSWER: Tapping the eye icon allows you to view or hide your saved card details for privacy and security.
+---
+
+### DOC_ID: 181
+QUESTION: Can I enable or disable Auto Pay at any time?
+ANSWER: Yes, simply use the toggle at the top to turn Auto Pay on or off as needed. Changes will affect upcoming scheduled payments.
+---
+
+### DOC_ID: 182
+QUESTION: What is the Group Unique ID ?
+ANSWER: The Group Unique ID is a distinct identifier for your group. It helps with technical support, member invitations.
+---
+
+### DOC_ID: 183
+QUESTION: How do I change the Cash Transfer Mode?
+ANSWER: Go to Group Settings → Cash Transfer Mode to update your transfer option
+---
+
+### DOC_ID: 184
+QUESTION: What do Minimum and Maximum Bid Amounts mean?
+ANSWER: These define the lowest and highest values that members can offer during a bidding process for term payouts, helping to enforce fair play and reasonable bidding within the group.
+---
+
+### DOC_ID: 185
+QUESTION: How can I join new group?
+ANSWER: Go to the Groups tab and tap on Join Group. You can either enter a group code/invite link shared by the admin or browse available groups. Once the admin approves your request, you’ll become a member of the group.
+---
+
+### DOC_ID: 186
+QUESTION: Can I delete a message in a group or for a specific user?
+ANSWER: messages cannot be deleted for security reasons.
+---
