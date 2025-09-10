@@ -1,11 +1,48 @@
 # Kitty Cash Microservices
 
+## Setup
+
+### Prerequisites
+- Python 3.10+
+- [Ollama](https://ollama.com/) installed and running locally
+- Pull a local LLM (LLaMA 3.2 )
+  ```bash
+  ollama pull llama3.2:latest 
+  ```
+
+
+### Set up data:
+- Place your `knowledge_base.txt` in `data/`.
+- The FAISS index and docstore.json will be generated automatically.
+
+Each service has its own dependencies. Generally, you should:
+
+### Install Python deps for each service
+```bash
+pip install -r requirements.txt
+```
+
+### Running Services
+
+Start each service:
+```bash
+uvicorn data_indexing_service.app:app --port 8001
+uvicorn retrieval_service.app:app --port 8002
+uvicorn generation_service.app:app --port 8003
+uvicorn api_server.app:app --port 8000
+```
+
+### Always ensure both retrieval and generation services are running before starting or using the API server.
+
+
+## Architecture
+
 ![alt text](images/1_n6sn9S_gXhvIXC8vSCz8zw.webp)
 
 ## Overview
-- **Data Indexing Service:** Loads chitfund workflows, creates BGE-M3 embeddings, builds FAISS vector indexes.
+- **Data Indexing Service:** Loads kittycash workflows, creates BGE-M3 embeddings, builds FAISS vector indexes.
 - **Retrieval Service:** Embeds user queries, searches FAISS index for relevant documents.
-- **Generation Service:** Generates responses using local large language model (Mistral-7B-Instruct/Llama3) with context.
+- **Generation Service:** Generates responses using local large language model (Llama3) with context.
 - **API Service:** Coordinates calls between retrieval and generation services; exposes unified query API.
 
 ---
