@@ -1,0 +1,8 @@
+[
+  "tests/test_app.py::test_generate_missing_fields",
+  "tests/test_app.py::test_generate_valid_request",
+  "tests/test_app.py::test_health_endpoint",
+  "tests/test_generator.py::test_format_prompt_structure",
+  "tests/test_generator.py::test_generate_mock",
+  "tests/test_generator.py::test_generate_raises"
+]
