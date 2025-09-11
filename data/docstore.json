@@ -741,6 +741,6 @@
   },
   {
     "id": 186,
-    "text": "### DOC_ID: 186\nQUESTION: Can I delete a message in a group or for a specific user?\nANSWER: messages cannot be deleted for security reasons.\n---"
+    "text": "### DOC_ID: 186\nQUESTION: Can I delete a message in a group or for a specific user?\nANSWER: No, messages can’t be deleted for security reasons.\n---"
   }
 ]
