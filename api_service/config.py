@@ -1,0 +1,5 @@
+RETRIEVAL_SERVICE_URL = "http://localhost:8002"
+GENERATION_SERVICE_URL = "http://localhost:8003"
+
+API_PORT = 8000
+TOP_K = 3
