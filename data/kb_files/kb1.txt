@@ -1,0 +1,30 @@
+How can I sign up for a new account? | To create your KittyCash account, go to the Sign-Up page on our website or app, enter your email, choose a password, and follow the verification steps. You’ll be set up in minutes
+What if I forget my password? | Use the account recovery options provided in the app or contact support for assistance.
+How can I view or update my profile? | You can view your profile details by selecting the profile settings top left on the screen.
+Can I upload or change my profile photo? | Yes, you can upload or change profile photos.
+Will I be charged any tax or fee during payouts? | Stripe charges 2% (INR) / 2.9% + $0.30 (USD). A small payout fee and 0.01% app service fee also apply
+How do I invite someone to KittyCash? | Go to the Groups tab, open your group, and tap Invite Members. You can share the invite link or group code with your friends. Once they complete verification and accept the invite, they’ll become part of the group
+Can I have multiple accounts with the same email? | No. Each email address can only be linked to one account for security reasons.
+How can I check my account status and credit balance? | Your profile displays your current status and any available credit balance.
+How can I create a group? | You can create a new group by specifying group name, terms, payment target, and frequency. Joining is done by group invitation or request.
+What is a group term and how does payment work? | Group terms are payment periods or cycles. You pay into your group’s terms based on the set target amount and schedule.
+How can I see my group info and payment logs? | Your group details, terms, and history of payments made can be viewed through your profile or group dashboard.
+What should I do if I want to update payment status or see payment history? | Check or update payments in Group → Payments section
+How is the winner payout handled in terms? | The term winner receives the pooled funds through the group’s selected transfer mode
+What payment methods can I use? | You can pay using your Debit Card or Credit Card
+How do I check my subscription expiry date? | Under subscription you can see your Expire Date
+How do I update my profile information? | You can update your details like name, contact number, address, date of birth, and profile photo within the app's profile settings.
+How can I change my password? | Once logged in, go to the password settings to update your password. If you received a temporary password, you will be prompted to change it immediately after login.
+What should I do if I want to delete my account? | You can unregister your account through the account settings. This will remove your profile and all associated data securely from the system.
+How do I recover my account if I lose access? | Use the password recovery option to receive a temporary password by registered email, then log in and reset your password.
+How do I join or leave a group? | You can join groups you are invited to or request to join. Leaving a group is as simple as selecting the leave option in the group settings.
+Can I send messages in groups or directly to other users? | Yes, you can send messages in any group you belong to, or create direct message groups to chat privately with one or more members.
+How will I know if someone is typing in a group chat? | The app shows typing indicators when other members are typing in the chat.
+How can I subscribe to a monthly or yearly plan? | The app offers monthly and yearly subscription plans. You can subscribe via the payment section in your profile.
+How do I update my payment details? | Update your payment information securely in the payment settings page of your profile.
+How do I cancel or renew my subscription? | Subscriptions can be cancelled or renewed from your profile's subscription management section.
+What happens if a payment fails? | You'll receive a notification if a payment fails. Please update your payment details or retry the payment to continue enjoying subscription benefits.
+Who can see my profile and messages? | Your profile and messages are visible only to authorized users and group members as per your privacy settings.
+What should I do if I suspect unauthorized access to my account? | Immediately change your password, enable two-phase authentication, and contact support for assistance.
+What is Kittycash? | Kittycash is a secure group savings and payment management platform that allows users to create or join groups, manage payments, track subscriptions, and communicate in real time.
+

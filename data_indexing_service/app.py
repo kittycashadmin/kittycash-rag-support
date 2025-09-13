@@ -1,108 +1,113 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from embedder import Embedder
 from indexer import Indexer
-from documents import load_knowledge_base, save_docstore, load_docstore
-from config import EMBED_MODEL, INDEX_DIR
+from documents import load_kb_files, load_docstore, save_docstore
+from config import EMBED_MODEL, INDEX_DIR, KB_FILES_DIR
 import numpy as np
+from pathlib import Path
+import json
 
 app = FastAPI(
     title="Kitty Cash Data/Indexing Service",
-    description="Manages document loading, embeddings, and FAISS index.",
-    version="1.0.0"
+    description="Manages document loading, embeddings, and FAISS index with versioning.",
+    version="1.2.0"
 )
 
 embedder = Embedder(EMBED_MODEL)
 indexer = Indexer(INDEX_DIR)
 documents = []
+current_version = None
 
-THRESHOLD_RATIO = 0.4  
+def get_next_version():
+    global current_version
+    try:
+        versions = sorted(Path(INDEX_DIR).glob("*.meta.json"))
+        if not versions:
+            current_version = "v1"
+            return current_version
+        latest_meta_path = versions[-1]
+        meta = json.loads(latest_meta_path.read_text())
+        last_version = meta["version"]
+        num = int(last_version.replace("v", ""))
+        current_version = f"v{num + 1}"
+        return current_version
+    except FileNotFoundError:
+        current_version = "v1"
+        return current_version
 
 @app.on_event("startup")
 def startup_event():
-    global documents
-    documents = load_knowledge_base()
-    if not documents:
-        raise RuntimeError("Knowledge base is empty. Please add documents.")
-
-    texts = [doc["text"] for doc in documents]
-    ids = np.array([int(doc["id"]) for doc in documents], dtype="int64")
-    embeddings = np.array(embedder.encode(texts), dtype="float32")
-
-    indexer.build(embeddings, ids)
-    indexer.save()
-    save_docstore(documents)
-
+    global documents, current_version
+    try:
+        meta = indexer.load_latest()
+        documents = load_docstore()
+        current_version = meta["version"]
+        print(f"Loaded latest index: {meta['version']}")
+    except FileNotFoundError:
+        documents = load_kb_files(KB_FILES_DIR)
+        if not documents:
+            raise RuntimeError("Knowledge base is empty. Please add KB files.")
+        texts = [doc["text"] for doc in documents]
+        embeddings = embedder.encode(texts)
+        indexer.build(embeddings)
+        version = get_next_version()
+        indexer.save(version, len(documents))
+        save_docstore(documents)
+        print(f"Created initial index: {version}")
 
 @app.get("/health")
 def health_check():
     return {"status": "Data/Indexing Service is running"}
 
-
-@app.get("/index/rebuild")
-def rebuild_index():
+@app.get("/index/add")
+def add_to_index(kb_file: str = Query(None, description="KB file path added")):
     global documents
-    documents = load_knowledge_base()
-    if not documents:
-        raise HTTPException(status_code=400, detail="No documents to index.")
 
-    try:
-        existing_docs = load_docstore()
-        indexer.load()
-        index_exists = True
-    except FileNotFoundError:
-        existing_docs = []
-        index_exists = False
-
-
-    if not index_exists:
-        texts = [doc["text"] for doc in documents]
-        ids = np.array([int(doc["id"]) for doc in documents], dtype="int64")
-        embeddings = np.array(embedder.encode(texts), dtype="float32")
-
-        indexer.build(embeddings, ids)
-        indexer.save()
-        save_docstore(documents)
-        return {"message": "Index built from scratch", "document_count": len(documents)}
-
-
-    existing_docs_map = {doc["id"]: doc["text"] for doc in existing_docs}
-    changed_docs = [doc for doc in documents if existing_docs_map.get(doc["id"]) != doc["text"]]
-
-    if not changed_docs:
-        return {"message": "No new or updated documents found", "document_count": len(documents)}
-    if len(changed_docs) / len(documents) >= THRESHOLD_RATIO:
-        texts = [doc["text"] for doc in documents]
-        ids = np.array([int(doc["id"]) for doc in documents], dtype="int64")
-        embeddings = np.array(embedder.encode(texts), dtype="float32")
-
-        indexer.build(embeddings, ids)
-        indexer.save()
-        save_docstore(documents)
-
-        return {
-            "message": "Index rebuilt due to large number of changes",
-            "document_count": len(documents),
-        }
+    if kb_file:
+        kb_path = Path(kb_file)
+        if not kb_path.exists():
+            full_path = Path(KB_FILES_DIR) / kb_file
+            if not full_path.exists():
+                raise HTTPException(status_code=400, detail=f"KB file not found: {kb_file}. Checked {kb_path} and {full_path}")
+            kb_path = full_path
+        new_docs = load_kb_files(kb_path.parent, kb_path.name)
     else:
-        ids_to_update = np.array([int(doc["id"]) for doc in changed_docs], dtype="int64")
-        texts_to_update = [doc["text"] for doc in changed_docs]
-        new_embeddings = np.array(embedder.encode(texts_to_update), dtype="float32")
+        new_docs = load_kb_files(KB_FILES_DIR)
 
-        indexer.remove(ids_to_update)
-        indexer.add(new_embeddings, ids_to_update)
+    existing_texts = {doc["text"] for doc in documents}
+    fresh_docs = [doc for doc in new_docs if doc["text"] not in existing_texts]
 
-        updated_docs_map = {doc["id"]: doc for doc in documents}
-        updated_docs = list(updated_docs_map.values())
-        save_docstore(updated_docs)
-        indexer.save()
+    if not fresh_docs:
+        return {"message": "No new KB documents to add.", "total_docs": len(documents)}
+    
+    texts = [doc["text"] for doc in fresh_docs]
+    embeddings = embedder.encode(texts)   
+    print(f"Adding embeddings with shape: {embeddings.shape}")
+    
+    indexer.add(embeddings)  
+    print(f"Index contains {indexer.index.ntotal} vectors after adding.")
 
-        return {"message": "Index incrementally updated"}
+    documents.extend(fresh_docs)
+    version = get_next_version()
+    indexer.save(version, len(documents))
+    save_docstore(documents)
 
+    return {
+        "message": f"Added {len(fresh_docs)} new KB documents. Index version: {version}",
+        "total_docs": len(documents)
+    }
 
 @app.get("/index/status")
 def index_status():
     try:
-        indexer.load()
-        return {"status": "Index loaded", "dimensions": indexer.dim}
+        meta = indexer.load_latest()
+        kb_files_count = len(list(Path(KB_FILES_DIR).glob("*.txt")))
+        return {
+            "status": "Index loaded",
+            "version": meta["version"],
+            "dimensions": meta["dim"],
+            "total_documents": meta["doc_count"],
+            "kb_files_count": kb_files_count
+        }
     except FileNotFoundError:
-        return {"status": "Index not found"}
+        return {"status": "Index not found", "kb_files_count": 0}

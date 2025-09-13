@@ -1,15 +1,56 @@
 version: "3.9"
+
 services:
-  kittycash-assistant:
-    build: .
+  data_indexing_service:
+    build:
+      context: ./data_indexing_service
+    container_name: kittycash_data_indexing
+    ports:
+      - "8001:8001"
     volumes:
       - ./data:/app/data
+    environment:
+      - EMBED_MODEL=BAAI/bge-m3
+      - INDEX_DIR=/app/data/faiss_index
+      - KB_PATH=/app/data/knowledge_base.txt
+      - DOCSTORE_PATH=/app/data/docstore.json
+    deploy:
+      replicas: 0  
+
+  retrieval_service:
+    build:
+      context: ./retrieval_service
+    container_name: kittycash_retrieval
+    ports:
+      - "8002:8002"
+    environment:
+      - EMBED_MODEL=BAAI/bge-m3
+      - INDEX_DIR=/app/data/faiss_index
+      - DOCSTORE_PATH=/app/data/docstore.json
+      - TOP_K=3
+
+  generation_service:
+    build:
+      context: ./generation_service
+    container_name: kittycash_generation
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - LLM_MODEL=llama3.2:latest
+      - TOP_K=3
+
+  api_server:
+    build:
+      context: ./api_server
+    container_name: kittycash_api
     ports:
       - "8000:8000"
-    stdin_open: true
-    tty: true
-    command: >
-      bash -c "
-      python -m scripts.build_index &&
-      python -m src.app --mode api --host 0.0.0.0 --port 8000
-      "
+    depends_on:
+      - retrieval_service
+      - generation_service
+    environment:
+      - RETRIEVAL_SERVICE_URL=http://retrieval_service:8002
+      - GENERATION_SERVICE_URL=http://generation_service:8003
+
