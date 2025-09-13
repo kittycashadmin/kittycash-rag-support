@@ -11,6 +11,3 @@ class Embedder:
             convert_to_numpy=True,
             show_progress_bar=True,
         )
-
-
-
