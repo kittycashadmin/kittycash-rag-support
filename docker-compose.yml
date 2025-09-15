@@ -15,7 +15,7 @@ services:
       - KB_PATH=/app/data/knowledge_base.txt
       - DOCSTORE_PATH=/app/data/docstore.json
     deploy:
-      replicas: 0  
+      replicas: 0 
 
   retrieval_service:
     build:
@@ -23,6 +23,8 @@ services:
     container_name: kittycash_retrieval
     ports:
       - "8002:8002"
+    volumes:
+      - ./data:/app/data
     environment:
       - EMBED_MODEL=BAAI/bge-m3
       - INDEX_DIR=/app/data/faiss_index
@@ -54,3 +56,8 @@ services:
       - RETRIEVAL_SERVICE_URL=http://retrieval_service:8002
       - GENERATION_SERVICE_URL=http://generation_service:8003
 
+
+
+
+
+      
