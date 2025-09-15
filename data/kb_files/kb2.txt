@@ -1,0 +1,51 @@
+What subscription plans are available? | Kittycash offers: Monthly plan – $7.99/month; Yearly plan – $79.99/year.
+What happens if my subscription payment fails? | You’ll get a notification and a grace period (7 days) to correct the payment method before your subscription is paused.
+What is the maximum number of members in a group? | A group can have up to 12 participants.
+How many groups can I join? | You can be active in 10 groups and have up to 10 passive groups at the same time.
+How does group admission work? | Groups can require approval either from the admin only or from all group members.
+What roles exist in a group? | Members can be Regular users, Admins, Cashiers, or Admin-Cashiers.
+What payment types are supported in groups? | We accept credit/debit cards (Visa, MasterCard, Amex) and bank transfers. You can manage payment methods in Settings > Payment
+How does the group payout work? | Payouts can be chosen randomly by the system or through a voting process.
+What is the group term period? | Groups can have weekly, bi-weekly, monthly, quarterly, half-yearly, or yearly fund cycles.
+What is the range of the credit score? | Your credit score ranges from 0 to 1000.
+What is the term payment window? | This is the allowed period after the start of a term when payments can be made.
+What happens if I miss the payment window? | If the payment window is closed, you might not be able to make a payment for that term.
+What is a credit score in Kittycash? | Your credit score is a number that shows how reliable you are in making payments.
+What factors affect my credit score? | Your credit score is based on how long you have been using Kittycash, successful payments, late payments, defaults, and lending portfolio.
+How is the credit score calculated? | The app adds points for successful payments and long account life, and subtracts for late payments.
+Why is my credit score important? | A higher credit score can help you build trust with group members.
+How do I create a new group? | Go to the 'Create Group' option, enter details, and confirm.
+How many people can I add to my group? | You can have up to the maximum allowed members as shown in the app.
+Can I leave a group before the group transaction starts? | Yes, you can leave the group before transactions, once the transaction starts from any group member you cannot leave the group
+How can I update group details? | If you’re an admin, you can edit name, photo, target amount, and settings.
+Can I change the group photo? | Yes. Go to 'Update Group Photo' and upload a new picture.
+How do I remove a member from a group? | Only admins can remove members.
+What do group roles mean? | Admin – manages the group; Cashier – handles payments; Admin-Cashier – does both; Regular – normal member.
+How do I place a bid? | When bidding is open, enter your bid amount within the allowed range.
+How is the winner chosen? | The highest valid bidder wins, or if no bids, random selection is made.
+When will the winner get their payout? | After term payments are collected, payout is credited via chosen method.
+My photo didn’t upload. Why? | Ensure your image is in JPG/PNG format, not too large, and has an internet connection.
+Will I know the activity of the Group? | Group members can view shared transactions and reports. Admins can also manage members, edit group settings, and approve join requests. Check your group’s settings for specific permissions.
+How do I delete my profile photo? | Update with a new one or remove to default.
+Can I change the email where I get Kittycash alerts? | Yes. Update email in Profile Settings.
+Can I share my profile or group photo link? | Yes. Open photo, copy URL.
+How do I change my profile photo? | Go to Profile Settings → Change Photo, and upload.
+How do I change my group’s photo? | If admin, go to Group Settings → Change Group Photo.
+How do I add a payment card to my profile? | Go to Payment Methods, tap 'Add Card', and enter details.
+How do I remove a saved payment method? | In Payment Methods, select and delete the card.
+How can I update my saved card details? | Choose the card, update details, and save.
+How do I enable or disable a payment method? | In Payment Methods list, choose Enable/Disable.
+How do I add someone to my contacts? | Tap 'Add Contact', enter details.
+What if I enter a contact who isn’t on Kittycash yet? | They’ll get an invite to join.
+How do I delete or update a contact? | Select contact, then edit or delete.
+How do I start a direct chat with a contact? | When a contact is added, a direct message group can be created.
+How do I set up payouts to my bank account? | Go to Payouts, bank details.
+Will I get notification if my payments fail? | No.
+How do I get my group won payout? | If you win, prize is sent to preferred method after processing.
+How do I update my bank details or address for payouts? | Go to Profile > Bank Details and update.
+How do I mark a group as my favorite? | In group list, tap 'star' icon.
+Why did my payment fail? | Check card details, expiry, and balance.
+What type of cards can I use? | Kittycash accepts most major credit and debit cards.
+How will I be billed? | Billed automatically according to plan.
+Why do I need to upload my ID for payouts? | For security and compliance.
+How do I know if my verification is complete? | Check verification status in profile.

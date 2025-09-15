@@ -1,0 +1,87 @@
+What is a group in KittyCash? | A group is a set of members who participate in a shared ROSCA.
+What does 'agreeGroupTerms' mean? | It means you agree to the group’s terms.
+How do I choose the Number of Terms for my group? What does this mean? | The number of terms is the total periods your group will run. For example, if you select "12" and set the term frequency to "Monthly," your group will operate for 12 months.
+How do group bids work? | Members place bids to get payout early.
+What is a group bonus? | Extra money distributed from winning bidder’s reduction.
+How is the payout decided? | By the group’s bidding process.
+What is a group cashier? | A member responsible for collecting contributions.
+What is group voting? | Voting is used to elect cashier or resolve disputes.
+How do I see the groups I’m in? | Go to 'My Groups'.
+What is the invite list? | A record of all invitations.
+How can I pay my term contribution? | Go to group page and select 'Pay Now'.
+How can I check if my payment went through? | View payment history in 'My Payments'.
+What happens if I miss a payment? | Missing a payment can result in penalties.
+How are bonuses calculated? | From winning bidders’ reduced payouts.
+When will my bonus be paid? | After the term’s payout is completed.
+How do I check my payout status? | Go to 'Payouts' section in your group.
+How can I contact KittyCash support? | Contact via Settings > Help, email, or phone.
+What’s the difference between user and group subscriptions? | User subscription is for individuals; group allows shared access.
+Will I receive the notifications before payment? | No.
+I can’t join a group. What should I do? | If the group is already full or the admin has not yet approved your request, please be patient. If it takes longer than expected, you can reach out to support for assistance.
+Why can’t I bid in my group? | If you have already won one time you are not allowed to bid until the session ends.
+How does group voting work? | The admin will poll the voting; the highest number of votes will be the winner.
+What happens if no one bids in a round? | Any random person will be selected and declared as winner.
+Benefits of participating in this app? | Save regularly, access payouts, and manage group funds securely.
+How to be sure the investment is safe? | All payments are processed securely via Stripe, and only verified members can join groups.
+What happens if one group member does not do payments correctly? | The admin should take action or request help from support to clear the issue.
+Can I leave the group in middle once the group transactions starts? | No, you cannot leave once the transactions start.
+What happens if the group admin stops managing the group? | Inform KittyCash support.
+Can I pay advanced payments for two/three months? | No advanced payments will be accepted.
+Age or income requirements to join? | The age limit is around 17 in USA, 18 in India.
+Can an admin transfer his role to others? | In certain circumstances, with the consent of all group members, the current admin should appoint a new admin and then exit the group.
+Can I remove a member from the group? | If a member does not follow the terms and conditions, they should be removed from the group and replaced with a new member.
+Why do I need to provide a contact number? | Your phone number is used for verification and communication regarding your subscriptions and savings groups.
+What should I do if my ID verification fails? | You can edit the information or contact KittyCash customer support.
+How do I enable my subscription? | Go to Subscription in your account settings, toggle the Subscription Status to Enabled then complete with the account details and payments.
+How can I check my subscription details? | You can view your Subscription ID, type, renewal date, expiry date, and payment status under the Subscription section.
+What happens if my subscription expires? | If your subscription expires, your access to premium features will stop immediately. You can still use the free/basic version, but to continue enjoying all features, you’ll need to renew.
+Can I switch from monthly to yearly subscription? | Yes, you can.
+How do I view my subscription history? | Scroll to Subscription History in the Subscription page to see past payments and plan details.
+Will I get a refund if I cancel my subscription? | No, cancellations do not trigger automatic refunds. You will continue to have access until the end of your current billing cycle. For special circumstances, contact support.
+How do I verify my identity in KittyCash? | After subscription activation, you will be redirected to the profile settings page to complete identity verification.
+How can I do the Identity verification? | Click on the identity verification; fill in your address, country, state, pincode, ID number, last 4 digits of your SSN, and date of birth, then click "Verify Identity".
+Why is my identity verification status showing as 'Passive' or 'Pending'? | This means your submitted documents or details are still under review. Verification may take a few hours.
+What is the difference between Identity Verification and ID Verification? | Identity Verification confirms your personal information and address, while ID Verification checks your government-issued ID documents for authenticity.
+How do I complete payout settings? | To complete your payout settings, go to your Profile → Payout Settings and add your bank account details. Once saved, payouts will be automatically transferred.
+What happens if my payout account is pending? | You won’t be able to withdraw funds until your account is fully verified and approved.
+How long does verification take? | Verification usually takes just a few minutes, but Stripe may take up to 24–48 hours in some cases.
+Where can I find Unique User Id? | Open navigation menu on top left, go to settings to find your UUID.
+How do I create groups? | Go to the Groups section, tap the + icon, and enter your group details like name, number of terms, fund target, and billing frequency.
+What is fund target? | This is the amount each member will contribute per term.
+How do I choose the frequency of contributions? | You can select Daily, Weekly, Biweekly, or Monthly in the “Term Frequency” dropdown.
+What is the Billing Day option for? | This is the date on which contributions will be collected from all members.
+Can I add members after creating the group? | Yes, you can invite members anytime by opening the group and selecting the Add Member option.
+Can I change group details after creation? | Some settings like group name and profile picture can be changed, but financial terms usually can’t be changed after the first contribution.
+How do I make my contribution? | You will get a payment request on the scheduled billing day. You can pay directly from the group page.
+Can I be in multiple groups at the same time? | Yes, you can join or create multiple groups, at most 10.
+What is the Billing Day? | The day of the month/week when contributions are collected from members.
+What is Payout Bidding? | It’s a process where members place bids to win the group payout for a particular term.
+How do I place a bid? | When bidding is active, you will receive a group message. Click the bidding icon and enter your bid amount.
+When can I bid? | You can bid only when the bidding status shows in progress. You will get a message in group chat when bidding starts.
+How do I know if I won the bid? | The WINNER status will display along with your name in the group chat.
+Who can control bidding? | Only the group admin can do.
+Can I check the term info? | Yes, Group settings > session settings > terms info.
+What are the bidding statuses? | WINNER – The payout for the term has been decided, IN PROGRESS – Bidding is currently open, STOPPED – Bidding is paused by the admin, RESUMED – Bidding has been restarted, FINISHED – The bidding process for the term has ended.
+How to know the highest bid while bidding? | While bidding, you can see in the latest bid.
+What does Term Frequency mean? | Term Frequency determines how often your group contributes funds—every week, every two weeks, or every month.
+How do I select the right Billing Day? | When creating a group, choose a billing day that works best for all members. Recommended: just after salary credit.
+How often will I need to contribute funds? | This depends on the Term Frequency (weekly, biweekly, or monthly).
+If I pick “Monthly,” will the group be billed on the same day each month? | Yes. Contributions will be collected on the same billing day each month.
+Can I change the billing frequency or day after creating the group? | Only before the transactions start you can change the settings.
+What does Cashier Selection mean? | Cashier Selection is the process of choosing a group member who will handle the payout for a particular term.
+What are the available choices for Cashier Selection? | ADMIN: The group administrator is always the cashier, ADMIN_SELECT: The admin selects a cashier from group members for each term, VOTING: Group members vote to choose the cashier for each term.
+Can we change the cashier after group creation? | Yes, the admin can reassign the cashier if needed with group approval.
+What is the Payout Process, and why does it matter? | The payout process defines how the group decides who receives the funds for a term.
+What are the available payout process types? | RANDOMIZE: chosen randomly among members, BIDDING: Members can bid for the payout, highest bidder receives the fund.
+What does 'Allow Multiple Pays/Term' mean? | This setting determines if a member can split their required payment for a term into multiple smaller payments.
+What does 'Auto-Pay Required' mean? | If enabled, members must set up automatic recurring payments for their contributions.
+What if I select ‘No’ for Auto-Pay Required? | Members can pay manually each term; auto-pay is optional.
+Can I change the Auto-Pay requirement after setup? | Yes, you can join if the admin approves, but make sure all payments are completed correctly.
+Why am I getting the error message: “Enter term target that is multiple of number of terms”? | The Fund Target amount you entered must be exactly divisible by the Number of Terms you set for your group.
+How do I add members to my group during group creation? | In the “Members” step, search for contacts by name, check desired members, then proceed to confirm selections.
+What if I want to add a person who is not in contacts while creating a group? | You can send them an invitation to join. Once they accept and verify, they will appear in your member selection list.
+Can I still add or invite more members at this confirmation stage? | At this stage, you can only review selected members. To add more, go back to the “Members” step before confirming.
+Can I add people after creation of group? | Yes, before transactions start you can add.
+Where can I see all group members? | Tap the “Participants” section to view and manage the full list of group members.
+How do I manage group term seasons? | Use the “Seasons” option to check or adjust details about group terms or cycles.
+What does Season Status mean? | “Season Status” shows if the current term (season) is active
