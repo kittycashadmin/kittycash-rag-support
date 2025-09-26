@@ -1,3 +1,5 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 from fastapi import FastAPI, HTTPException
 from retriever import Retriever
 from config import EMBED_MODEL, INDEX_DIR, DOCSTORE_PATH, TOP_K

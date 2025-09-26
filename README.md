@@ -23,16 +23,6 @@ Each service has its own dependencies. Generally, you should:
 pip install -r requirements.txt
 ```
 
-### Running Services
-
-Start each service:
-```bash
-uvicorn data_indexing_service.app:app --port 8001
-uvicorn retrieval_service.app:app --port 8002
-uvicorn generation_service.app:app --port 8003
-uvicorn api_server.app:app --port 8000
-```
-
 ### Always ensure both retrieval and generation services are running before starting or using the API server.
 
 
@@ -88,12 +78,92 @@ uvicorn api_server.app:app --port 8000
 
 ## API  Service
 
-**Purpose:** Provide unified API endpoint, coordinate retrieval and generation calls asynchronously.
+**Purpose:** Provide unified endpoint.
 
 **Key Features:**
-- Routes user queries to retrieval and generation services.
-- Handles errors and logs operations.
-- CORS enabled for cross-origin access.
+- Sends user query to MCP client
+- Handles tool execution via MCP
+- Logs all operations and errors
+
+## MCP Client
+**Purpose:** Central orchestrator for tool execution using Router LLM.
+- Uses LLM to decide which tools to call first
+- Fallback to retriever → generator if LLM fails
+- Ensures context is never returned directly
+- Supports retriever, generator, indexer
+
+## MCP Server
+**Purpose:** server acts as the central hub for managing tool execution requests in the Kitty Cash system. It provides a streamable, async interface for the MCP client to call tools such as retriever, generator, and indexer.
+- list of available tools and their capabilities
+- Receives tool call requests and routes them to the appropriate service.
+
+# MCP WORKFLOW
+
+![KC](images/mcp+rag.PNG)
+
+
+### Kitty Cash Query Workflow
+
+1. **User sends a question** via the API endpoint.
+
+2. **MCP Client** receives the question and asks the **Router LLM** which tools to use.
+
+   - If the question needs facts → Plan: `retriever` → `generator`.
+   - If the question is creative → Plan: `generator` only.
+
+3. **MCP Server** executes each tool step:
+
+   - **Retriever:** Searches the FAISS index and returns relevant documents.
+   - **Generator:** Takes the query + optional context to produce the final answer using **local LLM (Llama3)**.
+
+4. **Final answer** is returned to the API Service → sent to the user.
+
+If testing in local  first install the requirements and run the each micreservice as mention below: 
+
+### Step 1: Start Data Indexing Service
+Generates FAISS index and docstore from the knowledge base:
+
+```bash
+uvicorn data_indexing_service.app:app --port 8001 --reload
+```
+### Step 2: Start Retrieval Service
+Searches the FAISS index for relevant documents:
+```bash
+uvicorn retrieval_service.app:app --port 8002 --reload
+```
+### Step 3: Start Generation Service
+Generates answers using LLaMA 3:
+```bash
+uvicorn generation_service.app:app --port 8003 --reload
+```
+
+### Step 4: Start MCP Server
+Executes tool steps  and orchestrates MCP Client:
+```bash
+python mcp_server.server.py
+```
+
+### Step 5: Start Data Indexing Service
+Exposes  endpoint to receive user queries and upload files
+```bash
+uvicorn api_service.app:app --port 8000 --reload
+```
+###command to test the API service:
+
+```bash
+curl -X POST http://127.0.0.1:8000/support/chat \
+-H "Content-Type: application/json" \
+-d '{
+    "user_id": "123",
+    "message": "What is Kitty Cash?"
+}'
+```
+
+### To build docker
+```bash
+docker-compose up --build
+```
+
 
 # Data Indexing service
 

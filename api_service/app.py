@@ -1,71 +1,54 @@
-from fastapi import FastAPI, HTTPException, Request
-import httpx 
-import logging 
-from pydantic import BaseModel 
-from config import RETRIEVAL_SERVICE_URL, GENERATION_SERVICE_URL, TOP_K
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+import logging
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File
+from mcp_client import KittyCashMCPClient
 
-app = FastAPI()
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+)
+logger = logging.getLogger("api_server")
 
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("support_server")
-
+app = FastAPI(title="Kitty Cash API Server (MCP Client)", version="1.0.0")
+mcp_client = KittyCashMCPClient()
 
 @app.get("/health")
 async def health_check():
-    return {"status": "API server running"}
+    return {"status": "API Server with MCP running"}
 
 @app.post("/support/chat")
 async def support_chat(request: Request):
-    data = await request.json()
-    user_message = data.get("message")
-    user_id = data.get("user_id")
+    payload = await request.json()
+    user_id = payload.get("user_id")
+    message = payload.get("message")
 
-    if not user_message or not user_id:
-        raise HTTPException(status_code=400, detail="Missing 'message' or 'user_id'")
+    if not user_id or not message:
+        raise HTTPException(status_code=400, detail="Missing 'user_id' or 'message'")
 
-    logger.info(f"Received message from user {user_id}: {user_message}")
+    logger.info(f"Received message from user {user_id}")
 
     try:
-        async with httpx.AsyncClient(timeout=120.0) as client:
-            retrieval_resp = await client.get(
-                f"{RETRIEVAL_SERVICE_URL}/search/",
-                params={"query": user_message},
-            )
-            retrieval_resp.raise_for_status()
-            context_docs = retrieval_resp.json().get("results", [])[:TOP_K]
+        routed = await mcp_client.route_and_call(message)
+    except Exception as e:
+        logger.exception(f"Error routing/calling tool: {e}")
+        raise HTTPException(status_code=503, detail=f"Routing/Tool error: {e}")
 
-            logger.info(f"Retrieved {len(context_docs)} documents from retrieval service.")
-            context = [doc["document"] for doc in context_docs]
-            gen_payload = {
-                "user_query": user_message,
-                "context": context
-            }
+    answer = routed.get("answer", "")
+    logger.info(f"Returning answer preview: {answer[:240] if answer else '<empty>'}")
 
-            logger.info(f"Sending context to generation service.")
-            generation_resp = await client.post(
-                f"{GENERATION_SERVICE_URL}/generate/",
-                json=gen_payload
-            )
-            generation_resp.raise_for_status()
-            answer = generation_resp.json().get("answer", "")
+    return {"status": "success", "responses": [{"type": "text", "content": answer}]}
 
-            logger.info(f"Generated answer for user {user_id}")
+@app.post("/admin/index/upload")
+async def admin_upload(file: UploadFile = File(...)):
+    try:
+        file_path = f"/tmp/{file.filename}"
+        with open(file_path, "wb") as f:
+            f.write(await file.read())
 
-            return {
-                "status": "success",
-                "responses": [
-                    {
-                        "type": "text",
-                        "content": answer
-                    }
-                ]
-            }
-
-    except httpx.RequestError as e:
-        logger.error(f"Request error: {str(e)}")
-        raise HTTPException(status_code=503, detail="Service unavailable")
-
-    except httpx.HTTPStatusError as e:
-        logger.error(f"HTTP error {e.response.status_code}: {e.response.text}")
-        raise HTTPException(status_code=e.response.status_code, detail=e.response.text)
+        logger.info(f"Indexing file uploaded by admin: {file.filename}")
+        result = await mcp_client.index(file_path)
+        logger.info(f"Indexing result: {result}")
+        return {"status": "success", "detail": result}
+    except Exception as e:
+        logger.exception(f"Indexing failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))

@@ -1,3 +1,5 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 import faiss
 import numpy as np
 from pathlib import Path

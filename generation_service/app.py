@@ -1,3 +1,5 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict

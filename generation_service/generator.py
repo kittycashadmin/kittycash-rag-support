@@ -1,3 +1,5 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 import subprocess
 from config import LLM_MODEL
 

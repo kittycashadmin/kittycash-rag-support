@@ -27,4 +27,3 @@ What happens if a payment fails? | You'll receive a notification if a payment fa
 Who can see my profile and messages? | Your profile and messages are visible only to authorized users and group members as per your privacy settings.
 What should I do if I suspect unauthorized access to my account? | Immediately change your password, enable two-phase authentication, and contact support for assistance.
 What is Kittycash? | Kittycash is a secure group savings and payment management platform that allows users to create or join groups, manage payments, track subscriptions, and communicate in real time.
-
