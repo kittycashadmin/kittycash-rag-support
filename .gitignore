@@ -20,3 +20,7 @@ env/
 
 *.pth
 .checkpoints/
+.checkpoints/
+data/faiss_index/
+*.pth
+*.index
