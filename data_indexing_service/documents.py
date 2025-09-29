@@ -1,6 +1,9 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 from pathlib import Path
 import json
 from config import DOCSTORE_PATH
+
 
 def load_kb_files(kb_dir: str, kb_file: str = None):
     kb_path = Path(kb_dir)

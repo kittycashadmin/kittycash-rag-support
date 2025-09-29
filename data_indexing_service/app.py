@@ -1,4 +1,6 @@
-from fastapi import FastAPI, HTTPException, Query
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File
 from embedder import Embedder
 from indexer import Indexer
 from documents import load_kb_files, load_docstore, save_docstore
@@ -59,7 +61,7 @@ def startup_event():
 def health_check():
     return {"status": "Data/Indexing Service is running"}
 
-@app.get("/index/add")
+'''@app.post("/index/add")
 def add_to_index(kb_file: str = Query(None, description="KB file path added")):
     global documents
 
@@ -95,7 +97,32 @@ def add_to_index(kb_file: str = Query(None, description="KB file path added")):
     return {
         "message": f"Added {len(fresh_docs)} new KB documents. Index version: {version}",
         "total_docs": len(documents)
+    }'''
+
+
+@app.post("/index/add")
+async def upload_and_index(file: UploadFile = File(...)):
+    global documents
+    kb_path = Path(KB_FILES_DIR) / file.filename
+    with open(kb_path, "wb") as f:
+        f.write(await file.read())
+    new_docs = load_kb_files(KB_FILES_DIR, file.filename)
+    existing_texts = {doc["text"] for doc in documents}
+    fresh_docs = [doc for doc in new_docs if doc["text"] not in existing_texts]
+    if not fresh_docs:
+        return {"message": "No new KB documents to add.", "total_docs": len(documents)}
+    texts = [doc["text"] for doc in fresh_docs]
+    embeddings = embedder.encode(texts)
+    indexer.add(embeddings)
+    documents.extend(fresh_docs)
+    version = get_next_version()
+    indexer.save(version, len(documents))
+    save_docstore(documents)
+    return {
+        "message": f"Uploaded and indexed {len(fresh_docs)} documents. Index version: {version}",
+        "total_docs": len(documents)
     }
+
 
 @app.get("/index/status")
 def index_status():

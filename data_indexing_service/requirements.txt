@@ -1,3 +1,5 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 fastapi
 uvicorn
 sentence-transformers
@@ -6,3 +8,8 @@ numpy
 pytest
 pytest-mock
 httpx
+git+https://github.com/facebookresearch/ImageBind.git
+torch
+torchvision
+torchaudio
+python-multipart

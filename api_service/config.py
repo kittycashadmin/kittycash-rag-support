@@ -1,5 +1,6 @@
-RETRIEVAL_SERVICE_URL = "http://localhost:8002"
-GENERATION_SERVICE_URL = "http://localhost:8003"
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
 
-API_PORT = 8000
+MCP_SERVER_URL = "http://127.0.0.1:9000/mcp"   
+MCP_META_URL = "http://127.0.0.1:9001"        
 TOP_K = 3
+OLLAMA_ROUTER_MODEL = "llama3.2:latest"
