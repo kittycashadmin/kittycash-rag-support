@@ -1,0 +1,8 @@
+retrieval_service/.checkpoints/imagebind_huge.pth
+data_indexing_service/.checkpoints/imagebind_huge.pth
+data/faiss_index/v1.index
+data/faiss_index/v2.index
+data/faiss_index/v3.index
+data/faiss_index/v4.index
+retrieval_service/.checkpoints/imagebind_huge.pth
+data_indexing_service/.checkpoints/imagebind_huge.pth

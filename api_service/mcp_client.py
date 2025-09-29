@@ -55,7 +55,7 @@ Return ONLY valid JSON in the format:
   ]
 }}
 Rules:
-1. Your goal is to produce a **final natural-language answer** for the user.
+1. Your goal is to produce a final natural language answer for the user.
 2. If the request needs information retrieval (facts, who/what/when/where/how, product details, etc.),
    - First call the `retriever` tool with the user's query.
    - Never send the retriever's raw results as the final answer.
@@ -78,7 +78,7 @@ User request:
         logger.info(f"Router prompt built for user input: {user_input!r}")
         return prompt
 
-    def call_router_llm(self, prompt: str, timeout_s: int = 120) -> Dict[str, Any]:
+    def call_router_llm(self, prompt: str, timeout_s: int = 300) -> Dict[str, Any]:
         cmd = ["ollama", "run", OLLAMA_ROUTER_MODEL]
         proc = subprocess.run(cmd, input=prompt.encode("utf-8"),
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout_s)
@@ -98,7 +98,7 @@ User request:
         except json.JSONDecodeError as e:
             raise RouterError(f"Router LLM returned invalid JSON. Raw: {out}. Error: {e}")
 
-    async def call_tool(self, tool_name: str, args: Dict[str, Any], timeout: float = 120.0):
+    async def call_tool(self, tool_name: str, args: Dict[str, Any], timeout: float = 300.0):
         logger.info(f"Calling tool '{tool_name}' with args: {args}")
         async with Client(self.server_url, timeout=timeout) as client:
             res = await client.call_tool(tool_name, args)

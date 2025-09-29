@@ -848,5 +848,10 @@
     "id": 1,
     "text": "what is the main aim of the app?| to build security and guidance in ROSCA",
     "source": "kb6.txt"
+  },
+  {
+    "id": 1,
+    "text": "How do I see the group which i am present? | open my groups in the chat session",
+    "source": "kb7.txt"
   }
 ]

@@ -1,0 +1,28 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+logs/
+*.out
+
+# Git
+.git/
+.gitignore
+
+# Docker files (avoid copying parent Dockerfiles by mistake)
+Dockerfile
+docker-compose.yml
+
+# Local virtual environments
+venv/
+.env/
+env/
+
+# Data and model caches (we mount these as volumes)
+data/
+model_cache/
+weights/

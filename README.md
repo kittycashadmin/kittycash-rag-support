@@ -91,12 +91,12 @@ pip install -r requirements.txt
 - Fallback to retriever → generator if LLM fails
 - Ensures context is never returned directly
 - Supports retriever, generator, indexer
-
+---
 ## MCP Server
 **Purpose:** server acts as the central hub for managing tool execution requests in the Kitty Cash system. It provides a streamable, async interface for the MCP client to call tools such as retriever, generator, and indexer.
 - list of available tools and their capabilities
 - Receives tool call requests and routes them to the appropriate service.
-
+---
 # MCP WORKFLOW
 
 ![KC](images/mcp+rag.PNG)
@@ -148,7 +148,7 @@ Exposes  endpoint to receive user queries and upload files
 ```bash
 uvicorn api_service.app:app --port 8000 --reload
 ```
-###command to test the API service:
+### command to test the API service:
 
 ```bash
 curl -X POST http://127.0.0.1:8000/support/chat \
@@ -162,6 +162,10 @@ curl -X POST http://127.0.0.1:8000/support/chat \
 ### To build docker
 ```bash
 docker-compose up --build
+```
+### Pre-pull Models
+```bash
+docker exec -it ollama ollama pull llama2
 ```
 
 
