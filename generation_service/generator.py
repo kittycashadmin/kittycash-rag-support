@@ -1,7 +1,11 @@
 # © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
 
 import subprocess
+import os
+import json
 from config import LLM_MODEL
+import requests
+
 
 
 SYSTEM_RULES = """
@@ -39,16 +43,25 @@ def format_prompt(context_blocks, user_query):
     return prompt
 
 class Generator:
-    def __init__(self, model: str = LLM_MODEL):
-        self.model = model
+    def __init__(self, model: str = None):
+        self.model = model or os.environ.get("LLM_MODEL", "llama3:latest")
+        self.ollama_host = os.environ.get("OLLAMA_HOST", "http://ollama:11434")
 
     def generate(self, prompt: str) -> str:
-        result = subprocess.run(
-            ["ollama", "run", self.model],
-            input=prompt.encode("utf-8"),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+        prompt += "\nRespond only with a JSON object: {\"answer\": <your answer>}"
+        response = requests.post(
+            f"{self.ollama_host}/api/generate",
+            json={
+                "model": self.model,
+                "prompt": prompt,
+                "format": "json", 
+                "stream": False
+            }
         )
-        if result.returncode != 0:
-            raise RuntimeError(f"LLM generation failed: {result.stderr.decode('utf-8')}")
-        return result.stdout.decode("utf-8").strip()
+        if response.status_code != 200:
+            raise RuntimeError(f"LLM generation failed: {response.text}")
+        try:
+            answer_json = json.loads(response.json()["response"])
+            return answer_json.get("answer", "")
+        except Exception as e:
+            raise RuntimeError(f"Error parsing LLM response: {e}")

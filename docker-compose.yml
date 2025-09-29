@@ -1,6 +1,26 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 version: "3.9"
 
+volumes:
+  data:
+  model_cache:
+  ollama_data:
+
 services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+
   data_indexing_service:
     build:
       context: ./data_indexing_service
@@ -9,11 +29,13 @@ services:
       - "8001:8001"
     volumes:
       - ./data:/data
+      - model_cache:/root/.cache
     environment:
       - EMBED_MODEL=imagebind
       - INDEX_DIR=/data/faiss_index
       - KB_PATH=/data/knowledge_base.txt
       - DOCSTORE_PATH=/data/docstore.json
+      - IN_DOCKER=true
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
       interval: 20s
@@ -28,11 +50,13 @@ services:
       - "8002:8002"
     volumes:
       - ./data:/data
+      - model_cache:/root/.cache
     environment:
       - EMBED_MODEL=imagebind
       - INDEX_DIR=/data/faiss_index
       - DOCSTORE_PATH=/data/docstore.json
       - TOP_K=3
+      - IN_DOCKER=true
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
       interval: 20s
@@ -45,9 +69,16 @@ services:
     container_name: kittycash_generation
     ports:
       - "8003:8003"
+    volumes:
+      - ./data:/data
+      - model_cache:/root/.cache
     environment:
-      - LLM_MODEL=llama3.2:latest
+      - LLM_MODEL=llama3:latest
       - TOP_K=3
+      - IN_DOCKER=true
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
       interval: 20s
@@ -65,10 +96,14 @@ services:
       - retrieval_service
       - generation_service
       - data_indexing_service
+    volumes:
+      - ./data:/data
+      - model_cache:/root/.cache
     environment:
       - RETRIEVAL_SERVICE_URL=http://retrieval_service:8002
       - GENERATION_SERVICE_URL=http://generation_service:8003
       - INDEXING_SERVICE_URL=http://data_indexing_service:8001
+      - IN_DOCKER=true
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9001/mcp/tools"]
       interval: 20s
@@ -83,11 +118,16 @@ services:
       - "8000:8000"
     depends_on:
       - mcp_server
+    volumes:
+      - ./data:/data
+      - model_cache:/root/.cache
     environment:
       - MCP_SERVER_URL=http://mcp_server:9000/mcp
       - MCP_META_URL=http://mcp_server:9001
       - TOP_K=3
-      - OLLAMA_ROUTER_MODEL=llama3.2:latest
+      - OLLAMA_ROUTER_MODEL=llama3:latest
+      - KB_UPLOAD_DIR=/data
+      - IN_DOCKER=true
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 20s
