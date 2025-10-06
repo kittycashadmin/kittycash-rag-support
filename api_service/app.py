@@ -41,7 +41,7 @@ async def support_chat(request: Request):
 @app.post("/admin/index/upload")
 async def admin_upload(file: UploadFile = File(...)):
     try:
-        file_path = f"/tmp/{file.filename}"
+        file_path = f"/data/{file.filename}"
         with open(file_path, "wb") as f:
             f.write(await file.read())
 
