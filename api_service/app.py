@@ -16,6 +16,8 @@ mcp_client = KittyCashMCPClient()
 async def health_check():
     return {"status": "API Server with MCP running"}
 
+#microservice name/feature/functionality
+
 @app.post("/support/chat")
 async def support_chat(request: Request):
     payload = await request.json()
@@ -41,7 +43,7 @@ async def support_chat(request: Request):
 @app.post("/admin/index/upload")
 async def admin_upload(file: UploadFile = File(...)):
     try:
-        file_path = f"/data/{file.filename}"
+        file_path = f"/data/kb_files/{file.filename}"
         with open(file_path, "wb") as f:
             f.write(await file.read())
 
@@ -52,3 +54,21 @@ async def admin_upload(file: UploadFile = File(...)):
     except Exception as e:
         logger.exception(f"Indexing failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+
+@app.post("/kc_admin/similar-search")
+async def kc_admin_similar_search(req: Request):
+    payload = await req.json()
+    query = payload.get("query")
+    if not query:
+        raise HTTPException(status_code=400, detail="Missing query")
+
+    logger.info(f"[KC_ADMIN] Similar search requested: {query}")
+    try:
+        result = await mcp_client.call_tool("retriever_admin_search", {"query": query})
+        return {"success": True, "data": result}
+    except Exception as e:
+        logger.exception(f"KC Admin similar search failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+

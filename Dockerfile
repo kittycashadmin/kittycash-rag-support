@@ -1,3 +1,5 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+
 FROM python:3.10-slim
 
 RUN apt-get update && apt-get install -y \

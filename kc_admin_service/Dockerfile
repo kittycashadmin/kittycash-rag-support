@@ -1,5 +1,3 @@
-# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
-
 FROM python:3.10-slim
 
 WORKDIR /app
@@ -16,6 +14,6 @@ RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r re
 
 COPY . .
 
-EXPOSE 9005
+EXPOSE 9009
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9005"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9009", "--reload"]

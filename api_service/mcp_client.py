@@ -70,6 +70,7 @@ Rules:
 
 
 
+
 Available tools:
 {tools_text}
 User request:
@@ -118,13 +119,17 @@ User request:
             logger.warning(f"Tool '{tool_name}' returned empty or unrecognized response")
             return {}
 
+
+
+
+
     async def execute_plan(self, plan: List[Dict[str, Any]]):
         outputs = {}
         for step in plan:
             step_id = step["id"]
             tool = step["tool"]
             args = dict(step.get("args", {}))
-
+            
             if "context_from" in args:
                 ref = args.pop("context_from")
                 prev = outputs.get(ref, {})
@@ -133,18 +138,32 @@ User request:
                     results = prev.get("results", [])
                     for d in results:
                         if isinstance(d, dict):
-                            context_docs.append(d.get("document") or d.get("text") or str(d))
+                            doc_id = d.get("id", 0)
+                            text = d.get("question", "") + "\n" + d.get("answer", "")
+                            context_docs.append({"id": doc_id, "text": text})
                         else:
-                            context_docs.append(str(d))
+                            context_docs.append({"id": 0, "text": str(d)})
                 elif isinstance(prev, list):
-                    context_docs = [str(d) for d in prev]
+                    for d in prev:
+                        if isinstance(d, dict):
+                            doc_id = d.get("id", 0)
+                            text = d.get("question", "") + "\n" + d.get("answer", "")
+                            context_docs.append({"id": doc_id, "text": text})
+                        else:
+                            context_docs.append({"id": 0, "text": str(d)})
                 args["context"] = context_docs
+                if not context_docs and tool == "generator":
+                    logger.warning(f"Empty context for generator in step '{step_id}', skipping generator call")
+                    return {"error": "No relevant information found in the knowledge base for the query"}
 
             logger.info(f"Executing plan step '{step_id}' using tool '{tool}' with args keys: {list(args.keys())}")
             outputs[step_id] = await self.call_tool(tool, args)
             logger.info(f"Step '{step_id}' output keys: {list(outputs[step_id].keys()) if isinstance(outputs[step_id], dict) else 'unknown'}")
-
+            if "error" in outputs[step_id] and outputs[step_id]["error"]:
+                logger.error(f"Step '{step_id}' failed with error: {outputs[step_id]['error']}")
+                return {"error": f"Plan execution failed at step '{step_id}': {outputs[step_id]['error']}"}
         return outputs
+
 
     async def route_and_call(self, user_input: str, kb_file: str = None):
         tools = await self.discover_tools()

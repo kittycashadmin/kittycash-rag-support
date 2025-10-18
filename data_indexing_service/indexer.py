@@ -25,7 +25,7 @@ class Indexer:
             self.index.add(embeddings)
             print(f"Built Flat index with {self.index.ntotal} vectors.")
         else:
-            nlist = min(100, num_vectors // 4) #change it to dynamic dont fix the centroids
+            nlist = min(100, num_vectors // 4) 
             quantizer = faiss.IndexFlatIP(self.dim)
             self.index = faiss.IndexIVFFlat(quantizer, self.dim, nlist, faiss.METRIC_INNER_PRODUCT)
             self.index.train(embeddings)

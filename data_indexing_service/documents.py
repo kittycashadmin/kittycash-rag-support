@@ -2,8 +2,43 @@
 
 from pathlib import Path
 import json
+import pandas as pd
+from PyPDF2 import PdfReader
 from config import DOCSTORE_PATH
+from feature_router import FeatureRouter  
 
+_router = FeatureRouter()  
+
+def _rows_from_file(file: Path):
+    ext = file.suffix.lower()
+    if ext == ".txt":
+        for line in file.read_text(encoding="utf-8").splitlines():
+            if "|" in line:
+                yield [p.strip() for p in line.split("|", 1)]
+    elif ext == ".pdf":
+        text = ""
+        for page in PdfReader(file).pages:
+            text += (page.extract_text() or "") + "\n"
+        for line in text.splitlines():
+            if "|" in line:
+                yield [p.strip() for p in line.split("|", 1)]
+    elif ext == ".csv":
+        df = pd.read_csv(file)
+        if {"Question", "Answer"}.issubset(df.columns):
+            for q, a in zip(df["Question"], df["Answer"]):
+                yield str(q).strip(), str(a).strip()
+    elif ext == ".xlsx":
+        df = pd.read_excel(file)
+        if {"Question", "Answer"}.issubset(df.columns):
+            for q, a in zip(df["Question"], df["Answer"]):
+                yield str(q).strip(), str(a).strip()
+    elif ext == ".json":
+        data = json.loads(file.read_text(encoding="utf-8"))
+        for item in data:
+            if "Question" in item and "Answer" in item:
+                yield str(item["Question"]).strip(), str(item["Answer"]).strip()
+
+from config import DOCSTORE_PATH
 
 def load_kb_files(kb_dir: str, kb_file: str = None):
     kb_path = Path(kb_dir)
@@ -15,27 +50,46 @@ def load_kb_files(kb_dir: str, kb_file: str = None):
                 return []
         files = [file_path]
     else:
-        files = list(kb_path.glob("*.txt"))
+        files = list(kb_path.glob("*.*"))
         if not files:
             return []
+
+    existing_docs = []
+    if Path(DOCSTORE_PATH).exists():
+        try:
+            existing_docs = json.loads(Path(DOCSTORE_PATH).read_text(encoding="utf-8"))
+        except Exception:
+            existing_docs = []
+    start_id = len(existing_docs) + 1  # next available integer ID
+
     documents = []
-    doc_id = 1  
+    doc_id = start_id
     for file in files:
         try:
-            for line in file.read_text(encoding="utf-8").splitlines():
-                text = line.strip()
-                if text:
-                    documents.append({"id": doc_id, "text": text, "source": str(file.name)})
-                    doc_id += 1
+            for q, a in _rows_from_file(file) or []:
+                if not q or not a:
+                    continue
+                text = f"{q} | {a}"
+                feat = _router.detect_feature(text) or {}
+                documents.append({
+                    "id": doc_id,
+                    "text": text,
+                    "source": file.name,
+                    "feature_id": feat.get("feature_id"),
+                    "feature_name": feat.get("feature_name", "Uncategorized"),
+                    "confidence": feat.get("confidence", 0.0),
+                })
+                doc_id += 1
         except Exception as e:
-            print(f"Error reading {file}: {str(e)}")
+            print(f"Error reading {file}: {e}")
             continue
     return documents
 
+
 def save_docstore(documents):
     try:
-        data = [{"id": d["id"], "text": d["text"], "source": d.get("source", "")} for d in documents]
-        Path(DOCSTORE_PATH).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        Path(DOCSTORE_PATH).write_text(json.dumps(documents, ensure_ascii=False, indent=2), encoding="utf-8")
     except Exception as e:
         print(f"Error saving docstore: {str(e)}")
 
