@@ -5,4 +5,5 @@ INDEX_DIR = "../data/faiss_index"
 DOCSTORE_PATH = "../data/docstore.json"
 KB_PATH = "../data/knowledge_base.txt"
 KB_FILES_DIR = "../data/kb_files"
+ADMIN_API_URL = "http://127.0.0.1:9009"
 

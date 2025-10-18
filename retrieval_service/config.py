@@ -4,4 +4,5 @@ EMBED_MODEL = "BAAI/bge-m3"
 #EMBED_MODEL = "imagebind"
 INDEX_DIR = "../data/faiss_index"
 DOCSTORE_PATH = "../data/docstore.json"
-TOP_K = 3
+TOP_K = 400
+

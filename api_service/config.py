@@ -4,4 +4,7 @@ MCP_SERVER_URL = "http://mcp_server:9000/mcp"
 MCP_META_URL = "http://mcp_server:9001"
 TOP_K = 3
 OLLAMA_ROUTER_MODEL = "llama3:latest"
+OLLAMA_HOST = "http://ollama:11434" 
+
+
 

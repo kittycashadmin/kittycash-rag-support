@@ -1,0 +1,11 @@
+# © 2025 Kittycash Team. All rights reserved to Trustnet Systems LLP.
+FROM ollama/ollama:latest
+
+# Install curl (needed for health/wait checks)
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Copy and make entrypoint executable
+COPY ollama-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

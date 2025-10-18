@@ -22,7 +22,12 @@ class GenerateRequest(BaseModel):
     user_query: str
     context: List[Document]
 
-@app.post("/generate/")
+@app.get("/generation/service/health")
+def health_check():
+    return {"status": "Generation Service running"}
+
+
+@app.post("/generation/answer/generate")
 async def generate_answer(req: GenerateRequest):
     if not req.user_query or not req.context:
         raise HTTPException(status_code=400, detail="user_query and context are required")
@@ -33,6 +38,4 @@ async def generate_answer(req: GenerateRequest):
         raise HTTPException(status_code=500, detail=str(e))
     return {"answer": answer}
 
-@app.get("/health")
-def health_check():
-    return {"status": "Generation Service running"}
+
